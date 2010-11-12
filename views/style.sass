@@ -1,0 +1,84 @@
+body
+  background: #111
+  color: #eee
+  padding: 0
+  margin: 0
+  font-size: 20px
+
+a
+  text-decoration: none
+  color: #CCC68C
+  &:hover
+    text-decoration: underline
+
+ul
+  padding-left: 1em
+  margin-top: .5em
+
+#container
+  width: 960px
+  margin: 0 auto
+  position: relative
+
+#main
+  width: 646px
+  position: absolute
+  right: 0
+  top: 0
+
+.update
+  margin-top: 108px
+  background: #FAF3AB url('/images/backgrounds/update.jpg') repeat-y
+  color: black
+  line-height: 36px
+  font:
+    family: "Courier New", Courier, monospace
+    size: 20px
+  a
+    color: #00f
+    &:visited
+      color: #60f
+  p
+    margin: 0
+    margin-bottom: 36px
+  blockquote
+    margin: 36px
+  .content
+    margin:
+      left: 118px
+      right: 6px
+  .published_at
+    height: 118px
+    padding-left: 118px
+    line-height: 180px
+    background: url('/images/backgrounds/update_top.jpg') no-repeat
+    font:
+      weight: bold
+      size: 150%
+  .info
+    height: 90px
+    padding-left: 118px
+    background: url('/images/backgrounds/update_bottom.png') no-repeat bottom left
+    font:
+      size: 75%
+    .via, .permalink
+      display: inline-block
+    .via
+      font-weight: bold
+    .permalink
+      margin-left: 1em
+
+#sidebar
+  width: 250px
+  position: absolute
+  left: 0
+  top: 108px
+  font-family: Bookman, serif
+  line-height: 1.75
+  .name
+    font:
+      weight: bold
+      size: 175%
+  .awesomeness, .todo
+    margin-top: 2em
+

@@ -1,0 +1,36 @@
+%html
+  %head{:xmlns => 'http://www.w3.org/1999/xhtml'}
+    %title iamsolarpowered :: Ben Shymkiw
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/style.css'}
+    %script{:type => 'text/javascript', :src => 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js'}
+    %script{:type => 'text/javascript', :src => '/js/ben.js'}
+  %body
+    #container
+      #main
+        = yield
+      #sidebar
+        .name Ben Shymkiw
+        .bio
+          Web developer,<br />minimalist,<br />concerned citizen,<br />member of
+          %a{:href => 'http://t.apio.ca'} Tapioca Design Collective
+        .awesomeness
+          Behind the scenes:
+          %ul
+            %li{:title => '\'Cause writing PHP or Java all day is depressing!'}
+              %a{:href => 'http://www.ruby-lang.org/'} Ruby
+            %li{:title => 'A beautiful little "microframework".'}
+              %a{:href => 'http://www.sinatrarb.com/'} Sinatra
+            %li{:title => 'I just had to try it out.'}
+              %a{:href => 'http://www.mongodb.org/'} MongoDB
+            %li{:title => 'I used to hate writing Javascript.'}
+              %a{:href => 'http://jquery.com/'} jQuery
+            %li{:title => 'Closing tags suck.'}
+              %a{:href => 'http://haml-lang.com/'} Haml
+            %li{:title => 'Like CSS, only less awful.'}
+              %a{:href => 'http://sass-lang.com/'} Sass
+        .todo
+          TODO:
+          %ul
+            %li open external links in new tab
+            %li check for new posts after initial load
+
