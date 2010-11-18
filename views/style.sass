@@ -1,22 +1,29 @@
+$yellow: #F5F3A8
+$link_color: $yellow * 0.66667
+
 body
   background: #111
   color: #eee
   padding: 0
   margin: 0
-  font-size: 20px
+  font:
+    size: 18px
+    family: Bookman, serif
 
 a
   text-decoration: none
-  color: #CCC68C
+  color: $link_color
   &:hover
     text-decoration: underline
+    color: $yellow
 
 ul
+  margin: 0
+  padding: 0
   padding-left: 1em
-  margin-top: .5em
 
 #container
-  width: 960px
+  width: 954px
   margin: 0 auto
   position: relative
 
@@ -24,11 +31,11 @@ ul
   width: 646px
   position: absolute
   right: 0
-  top: 0
+  top: 108px
 
 .update
-  margin-top: 108px
-  background: #FAF3AB url('/images/backgrounds/update.jpg') repeat-y
+  margin-bottom: 108px
+  background: #FAF3AB url('/images/backgrounds/update.png') repeat-y
   color: black
   line-height: 36px
   font:
@@ -43,6 +50,8 @@ ul
     margin-bottom: 36px
   blockquote
     margin: 36px
+  &.new
+    display: none
   .content
     margin:
       left: 118px
@@ -51,7 +60,7 @@ ul
     height: 118px
     padding-left: 118px
     line-height: 180px
-    background: url('/images/backgrounds/update_top.jpg') no-repeat
+    background: url('/images/backgrounds/update_top.png') no-repeat
     font:
       weight: bold
       size: 150%
@@ -69,16 +78,51 @@ ul
       margin-left: 1em
 
 #sidebar
-  width: 250px
+  width: 252px
   position: absolute
   left: 0
   top: 108px
-  font-family: Bookman, serif
-  line-height: 1.75
-  .name
+  line-height: 1.5em
+  & > div
+    margin-top: 1.5em
+  a:hover
+    text-decoration: none
+  ul
+    list-style-type: none
+    li
+      a
+        display: inline-block
+        width: 100%
+      &:hover
+        color: $yellow
+        list-style-type: square
+  a.name
+    display: block
+    color: white
+    line-height: 1em
+    margin:
+      top: -1.333em
+      left: -.333em
     font:
-      weight: bold
-      size: 175%
-  .awesomeness, .todo
-    margin-top: 2em
+      size: 350%
+    .first
+      margin-left: -.333em
+    .last span
+      letter-spacing: 4px
+
+#status
+  position: fixed
+  top: 1em
+  right: 1em
+  font-size: 66.67%
+
+.request
+  border-top: solid 1px #222
+  line-height: 2em
+  & > div
+    label
+      display: inline-block
+      width: 6em
+      height: 100%
+      font-style: italic
 

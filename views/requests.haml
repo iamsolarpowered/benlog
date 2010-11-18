@@ -1,0 +1,19 @@
+#requests
+  - for request in @requests
+    .request
+      .uri
+        %label URI:
+        = link_to request.uri, request.uri
+      .referer
+        %label Referer:
+        = link_to request.referer, request.referer if request.referer
+      .agent
+        %label Agent:
+        = request.agent
+      .ip
+        %label IP:
+        = link_to request.ip, "http://whatismyipaddress.com/ip/#{request.ip}"
+      .time
+        %label Time:
+        = request.created_at.strftime("%b %e %Y, %l:%M %p")
+

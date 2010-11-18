@@ -1,3 +1,0 @@
-require 'benlog'
-run Benlog
-
