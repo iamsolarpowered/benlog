@@ -1,17 +1,18 @@
 require 'omniauth/openid'
 require 'openid/store/filesystem'
 
-use OmniAuth::Builder do
-  provider :google_apps, OpenID::Store::Filesystem.new('/tmp')
-end
+use OmniAuth::Strategies::GoogleApps,
+    OpenID::Store::Filesystem.new('/tmp'),
+    :name => 'admin',
+    :domain => 'tapiocacollective.com'
 
 # login action
 get '/login' do
-  redirect '/auth/google_apps?domain=tapiocacollective.com'
+  redirect '/auth/admin'
 end
 
 # omniauth callback
-get '/auth/:provider/callback' do
+post '/auth/:provider/callback' do
   auth = request.env['omniauth.auth']
   session[:email] = auth['user_info']['email']
   redirect session[:return_to] ? session.delete(:return_to) : '/'
@@ -41,7 +42,7 @@ helpers do
   end
 
   def current_user
-    session[:email] #FIXME: totally insecure - uses cookie with no secret!
+    session[:email]
   end
 
   def logged_in?
