@@ -45,6 +45,16 @@ get '/requests' do
   haml :requests
 end
 
+# Automatically pull changes and restart when Github repo is updated
+post '/release' do
+  #TODO: Make sure it's really from Github!
+  @payload = params[:payload] #TODO: Parse JSON (if needed)
+  #TODO: Only do this if master branch was updated
+  system 'git pull origin master'
+  system 'touch tmp/restart.txt'
+  'OK'
+end
+
 helpers do
   include Padrino::Helpers
 
