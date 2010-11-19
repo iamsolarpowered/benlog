@@ -15,5 +15,5 @@
         = link_to request.ip, "http://whatismyipaddress.com/ip/#{request.ip}"
       .time
         %label Time:
-        = request.created_at.strftime("%b %e %Y, %l:%M %p")
+        = Time.parse(request.created_at.to_s).getlocal.strftime("%b %e %Y, %l:%M %p")
 

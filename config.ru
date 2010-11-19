@@ -1,4 +1,3 @@
-%w( benlog ).each {|lib| require lib }
-
+require 'benlog'
 run Sinatra::Application
 
