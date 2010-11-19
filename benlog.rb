@@ -59,6 +59,7 @@ post '/release' do
   @payload = params[:payload] #TODO: Parse JSON (if needed)
   #TODO: Only do this if master branch was updated
   system 'git pull origin master'
+  system 'bundle install'
   system 'touch tmp/restart.txt'
   'OK'
 end
