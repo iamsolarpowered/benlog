@@ -7,14 +7,21 @@
 # Require models
 Dir.glob('models/*.rb').each {|model| require model }
 
-require 'lib/partial'
+# Practice safe sessions
+use Rack::Session::Pool, :key => '_benlog'
 
+# Config
 configure do
   set :root, File.expand_path(File.dirname(__FILE__))
   set :public, "#{settings.root}/public"
+  set :authorized_users, %w( ben@tapiocacollective.com )
   DataMapper.setup(:default, "sqlite3://#{settings.root}/db/ben.db")
   DataMapper.auto_upgrade!
 end
+
+# Require extensions
+require 'lib/partial'
+require 'lib/omniauth'
 
 get '/' do
   record_request
@@ -41,6 +48,7 @@ get '/style.css' do
 end
 
 get '/requests' do
+  authorize!
   @requests = Request.all(:order => [:created_at.desc])
   haml :requests
 end
