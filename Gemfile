@@ -11,4 +11,5 @@ gem 'dm-sqlite-adapter'
 gem 'rdiscount'
 gem 'padrino'
 gem 'omniauth'
+gem 'json'
 

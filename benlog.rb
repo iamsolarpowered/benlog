@@ -22,6 +22,7 @@ end
 # Require extensions
 require 'lib/partial'
 require 'lib/omniauth'
+require 'lib/date_range'
 
 get '/' do
   record_request
@@ -49,11 +50,19 @@ end
 
 get '/requests' do
   authorize!
-  @requests = Request.all(:order => [:created_at.desc])
+  @dates = Date.range(
+    params[:start_date] ? Date.parse(params[:start_date]) : (Date.today - 30),
+    params[:end_date] ? Date.parse(params[:end_date]) : Date.today
+  )
+  @requests = Request.all(
+    :created_at.gte => @dates.first,
+    :created_at.lt => (@dates.last + 1)
+  )
+  @requests_by_date = @requests.group_by {|r| r.created_at.to_date }
   haml :requests
 end
 
-# Automatically pull changes and restart when Github repo is updated
+# Automatically pull changes and restart app when Github repo is updated
 post '/release' do
   #TODO: Make sure it's really from Github!
   @payload = params[:payload] #TODO: Parse JSON (if needed)

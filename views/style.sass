@@ -8,7 +8,7 @@ body
   margin: 0
   font:
     size: 18px
-    family: Bookman, serif
+    family: Bookman, 'Bookman Old Style', serif
 
 a
   text-decoration: none
@@ -26,7 +26,7 @@ ul
   padding-left: 1em
 
 #container
-  width: 954px
+  width: 972px
   margin: 0 auto
   position: relative
 
@@ -83,7 +83,7 @@ ul
 #sidebar
   width: 252px
   position: absolute
-  left: 0
+  left: 18px
   top: 108px
   line-height: 1.5em
   & > div
@@ -121,11 +121,14 @@ ul
 
 .request
   border-top: solid 1px #222
+  margin-top: 2em
   line-height: 2em
   & > div
     label
       display: inline-block
+      vertical-align: top
       width: 6em
-      height: 100%
       font-style: italic
+    .value
+      display: inline-block
 

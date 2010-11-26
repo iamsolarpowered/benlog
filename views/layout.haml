@@ -2,13 +2,14 @@
 %html
   %head{:xmlns => 'http://www.w3.org/1999/xhtml'}
     %title iamsolarpowered :: Ben Shymkiw
+    %meta{:name => 'Description', :content => Ben.bio}
+    %meta{:name => 'Keywords', :content => Ben.keywords}
+    = favicon_tag '/favicon.ico'
+    = feed_tag :rss, '/rss'
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/style.css'}
     %script{:type => 'text/javascript', :src => 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js'}
     %script{:type => 'text/javascript', :src => '/js/ben.js'}
-    = feed_tag :rss, '/rss'
-    = favicon_tag '/favicon.ico'
-    %meta{:name => 'Description', :content => Ben.bio}
-    %meta{:name => 'Keywords', :content => Ben.keywords}
+    = yield_content :head
   %body
     #container
       #sidebar
@@ -25,6 +26,8 @@
               %a{:href => 'http://www.sinatrarb.com/'} Sinatra
             %li{:title => 'ActiveRecord isn\'t 100% wonderful.'}
               %a{:href => 'http://datamapper.org/'} DataMapper
+            %li{:title => 'Authentication made dead simple.'}
+              %a{:href => 'https://github.com/intridea/omniauth'} OmniAuth
             %li{:title => 'I used to hate writing Javascript.'}
               %a{:href => 'http://jquery.com/'} jQuery
             %li{:title => 'Closing tags suck.'}

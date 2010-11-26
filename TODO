@@ -1,5 +1,6 @@
 * Add Google Reader feed (needs more formatting)
 * Only check for updates every 5 minutes or so (not on every request)
 * Pagination
-* Upload to Github
+* Fix update display on iPad
+* 404 and 500 pages
 

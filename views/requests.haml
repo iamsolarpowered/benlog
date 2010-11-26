@@ -1,19 +1,12 @@
+- content_for :head do
+  %script{:type => 'text/javascript', :src => '/js/highcharts.js'}
+  = erb :_request_chart, :layout => false
+
+#chart
+
 #requests
-  - for request in @requests
-    .request
-      .uri
-        %label URI:
-        = link_to request.uri, request.uri
-      .referer
-        %label Referer:
-        = link_to request.referer, request.referer if request.referer
-      .agent
-        %label Agent:
-        = request.agent
-      .ip
-        %label IP:
-        = link_to request.ip, "http://whatismyipaddress.com/ip/#{request.ip}"
-      .time
-        %label Time:
-        = Time.parse(request.created_at.to_s).getlocal.strftime("%b %e %Y, %l:%M %p")
+  - @requests_by_date.each do |date, requests|
+    .date{:id => date.to_s}
+      - for request in requests
+        = partial :_request, :locals => {:request => request}
 

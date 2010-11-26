@@ -27,10 +27,12 @@ end
 helpers do
 
   def authorize!
-    session[:return_to] = request.fullpath
-    redirect '/login' unless logged_in?
-    halt 403, haml('%center You are not authorized to view the requested page') unless authorized?
-    session[:return_to] = nil
+    unless settings.environment == :development
+      session[:return_to] = request.fullpath
+      redirect '/login' unless logged_in?
+      halt 403, haml('%center You are not authorized to view the requested page') unless authorized?
+      session[:return_to] = nil
+    end
   end
 
   def authorized?
