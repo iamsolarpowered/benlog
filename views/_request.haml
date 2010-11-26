@@ -7,7 +7,7 @@
     .value= link_to request.referer, request.referer if request.referer
   .agent
     %label Agent:
-    .value= request.agent.gsub(') ', ')<br />')
+    .value= request.agent.gsub(') ', ')<br />') rescue nil
   .ip
     %label IP:
     .value= link_to request.ip, "http://whatismyipaddress.com/ip/#{request.ip}"
