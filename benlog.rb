@@ -56,7 +56,8 @@ get '/requests' do
   )
   @requests = Request.all(
     :created_at.gte => @dates.first,
-    :created_at.lt => (@dates.last + 1)
+    :created_at.lt => (@dates.last + 1),
+    :uri => '/'
   )
   @requests_by_date = @requests.group_by {|r| r.created_at.to_date }
   haml :requests
