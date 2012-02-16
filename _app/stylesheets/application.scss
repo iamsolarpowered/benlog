@@ -1,0 +1,43 @@
+header {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .container {
+    width: 940px;
+    margin: 0 auto;
+  }
+}
+
+.container {
+  padding: 78px 0;
+}
+
+.about {
+  text-align: right;
+  h1 {
+    font-size: 39px;
+    margin-bottom: 9px;
+  }
+  .avatar {
+    display: inline-block;
+    vertical-align: text-top;
+    margin-left: .5em;
+  }
+}
+
+.tweet {
+  margin-bottom: 2em;
+  .text {
+    font-size: 118%;
+  }
+  .info {
+    margin-top: 1em;
+    text-align: right;
+    & > div {
+      display: inline-block;
+      margin-left: 2em;
+    }
+  }
+}

@@ -3,10 +3,31 @@
   %head
     %title Ben Shymkiw - iamsolarpowered
     = stylesheet_link_tag 'http://t.apio.ca/bootstrap/css/bootstrap.min.css'
+    = stylesheet_link_tag 'application'
     = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
     = javascript_include_tag 'application'
   %body
+    %header
+      .container
+        .row
+          .about.span4
+            %h1 Ben Shymkiw
+            %p 
+              Rubyist, concerned citizen
+              %span.avatar.thumbnail
+                %img{src: "http://www.gravatar.com/avatar/6d51e89b2c630d7e3db9b5fd499661cf?s=78"}
+
     .container
-      %header
-        %h1 Hello
-      %section.tweets
+      .row
+        %section.tweets.span7.offset5
+
+    #templates{style: 'display: none;'}
+      .tweet.well
+        .text
+        .info.small
+          .date
+          .retweets
+            %span.count
+            retweets
+          .permalink
+            %a{href: '#', target: '_blank'} [ permalink ]

@@ -1,8 +1,9 @@
 (function() {
   jQuery(function() {
-    var Tweet, tweets_el, twitter_url;
+    var Tweet, tweet_template, tweets_el, twitter_url;
     twitter_url = 'https://api.twitter.com/1/statuses/user_timeline.json?count=100&trim_user=true&include_rts=true&screen_name=iamsolarpowered&callback=?';
     tweets_el = $('.tweets');
+    tweet_template = $('#templates .tweet').first();
     $.getJSON(twitter_url, function(tweets) {
       var t, tweet, _i, _len, _results;
       window.console.log(tweets);
@@ -24,11 +25,20 @@
       Tweet.prototype.formatted_text = function() {
         return this.text().autolink().link_twitter_user().link_twitter_hashtag();
       };
-      Tweet.prototype.el = function() {
-        return "<article class='tweet'>" + (this.formatted_text()) + "</article>";
+      Tweet.prototype.html = function() {
+        var _el;
+        _el = tweet_template.clone();
+        $('.text', _el).html(this.formatted_text());
+        $('.date', _el).text(this.tweet.created_at);
+        $('.retweets .count', _el).text(this.tweet.retweet_count);
+        if (!(this.tweet.retweet_count > 0)) {
+          $('.retweets', _el).hide();
+        }
+        $('.permalink a', _el).attr('href', "http://twitter.com/" + this.tweet.user.id + "/statuses/" + this.tweet.id_str);
+        return _el;
       };
       Tweet.prototype.display = function() {
-        return tweets_el.append(this.el());
+        return tweets_el.append(this.html());
       };
       return Tweet;
     })();

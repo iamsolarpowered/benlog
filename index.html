@@ -3,15 +3,45 @@
   <head>
     <title>Ben Shymkiw - iamsolarpowered</title>
     <link href="http://t.apio.ca/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="/javascripts/application.js" type="text/javascript"></script>
   </head>
   <body>
+    <header>
+      <div class='container'>
+        <div class='row'>
+          <div class='about span4'>
+            <h1>Ben Shymkiw</h1>
+            <p>
+              Rubyist, concerned citizen
+              <span class='avatar thumbnail'>
+                <img src='http://www.gravatar.com/avatar/6d51e89b2c630d7e3db9b5fd499661cf?s=78' />
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
     <div class='container'>
-      <header>
-        <h1>Hello</h1>
-      </header>
-      <section class='tweets'></section>
+      <div class='row'>
+        <section class='tweets span7 offset5'></section>
+      </div>
+    </div>
+    <div id='templates' style='display: none;'>
+      <div class='tweet well'>
+        <div class='text'></div>
+        <div class='info small'>
+          <div class='date'></div>
+          <div class='retweets'>
+            <span class='count'></span>
+            retweets
+          </div>
+          <div class='permalink'>
+            <a href='#' target='_blank'>[ permalink ]</a>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

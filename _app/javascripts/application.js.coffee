@@ -2,6 +2,7 @@ jQuery ->
   twitter_url = 'https://api.twitter.com/1/statuses/user_timeline.json?count=100&trim_user=true&include_rts=true&screen_name=iamsolarpowered&callback=?'
 
   tweets_el = $('.tweets')
+  tweet_template = $('#templates .tweet').first()
 
   $.getJSON twitter_url, (tweets) ->
     window.console.log tweets
@@ -16,9 +17,16 @@ jQuery ->
 
     formatted_text: -> this.text().autolink().link_twitter_user().link_twitter_hashtag()
 
-    el: -> "<article class='tweet'>#{this.formatted_text()}</article>"
+    html: -> 
+      _el = tweet_template.clone()
+      $('.text', _el).html(this.formatted_text())
+      $('.date', _el).text(@tweet.created_at)
+      $('.retweets .count', _el).text(@tweet.retweet_count)
+      $('.retweets', _el).hide() unless @tweet.retweet_count > 0
+      $('.permalink a', _el).attr('href', "http://twitter.com/#{@tweet.user.id}/statuses/#{@tweet.id_str}")
+      _el
 
-    display: -> tweets_el.append(this.el())
+    display: -> tweets_el.append(this.html())
 
 String::autolink = () ->
   this.replace /(https?:\/\/.*?)\W*(\s|$)/gi, "<a href='$1' target='_blank'>$1</a> "
