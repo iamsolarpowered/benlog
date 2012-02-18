@@ -25,11 +25,17 @@
       Tweet.prototype.formatted_text = function() {
         return this.text().autolink().link_twitter_user().link_twitter_hashtag();
       };
+      Tweet.prototype.date = function() {
+        return new Date(this.tweet.created_at);
+      };
+      Tweet.prototype.formatted_date = function() {
+        return "" + (this.date().toLocaleDateString()) + " " + (this.date().toLocaleTimeString());
+      };
       Tweet.prototype.html = function() {
         var _el;
         _el = tweet_template.clone();
         $('.text', _el).html(this.formatted_text());
-        $('.date', _el).text(this.tweet.created_at);
+        $('.date', _el).text("Posted " + ($.timeago(this.date()))).attr('title', this.formatted_date());
         $('.retweets .count', _el).text(this.tweet.retweet_count);
         if (!(this.tweet.retweet_count > 0)) {
           $('.retweets', _el).hide();

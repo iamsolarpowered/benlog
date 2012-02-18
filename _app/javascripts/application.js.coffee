@@ -17,10 +17,15 @@ jQuery ->
 
     formatted_text: -> this.text().autolink().link_twitter_user().link_twitter_hashtag()
 
+
+    date: -> new Date(@tweet.created_at)
+
+    formatted_date: -> "#{this.date().toLocaleDateString()} #{this.date().toLocaleTimeString()}"
+
     html: -> 
       _el = tweet_template.clone()
       $('.text', _el).html(this.formatted_text())
-      $('.date', _el).text(@tweet.created_at)
+      $('.date', _el).text("Posted #{$.timeago(this.date())}").attr('title', this.formatted_date())
       $('.retweets .count', _el).text(@tweet.retweet_count)
       $('.retweets', _el).hide() unless @tweet.retweet_count > 0
       $('.permalink a', _el).attr('href', "http://twitter.com/#{@tweet.user.id}/statuses/#{@tweet.id_str}")
