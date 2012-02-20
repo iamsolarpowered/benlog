@@ -14,17 +14,17 @@ header .container {
   padding: 78px 0;
 }
 
-.about {
-  text-align: right;
-}
 .about h1 {
   font-size: 39px;
-  margin-bottom: 9px;
+  margin-bottom: 13px;
 }
 .about .avatar {
   display: inline-block;
   vertical-align: text-top;
-  margin-left: .5em;
+}
+
+#main {
+  padding-top: 49px;
 }
 
 .tweet {

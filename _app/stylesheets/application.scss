@@ -15,16 +15,18 @@ header {
 }
 
 .about {
-  text-align: right;
   h1 {
     font-size: 39px;
-    margin-bottom: 9px;
+    margin-bottom: 13px;
   }
   .avatar {
     display: inline-block;
     vertical-align: text-top;
-    margin-left: .5em;
   }
+}
+
+#main {
+  padding-top: 49px;
 }
 
 .tweet {
