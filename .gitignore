@@ -1,5 +1,0 @@
-Gemfile.lock
-db/*.db
-tmp/restart.txt
-tmp/**/*
-
