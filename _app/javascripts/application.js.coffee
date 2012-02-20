@@ -5,7 +5,7 @@ jQuery ->
   tweet_template = $('#templates .tweet').first()
 
   $.getJSON twitter_url, (tweets) ->
-    window.console.log tweets
+    # window.console.log tweets
     for tweet in tweets
       t = new Tweet tweet
       t.display()
