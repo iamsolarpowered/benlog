@@ -6,7 +6,6 @@
     tweet_template = $('#templates .tweet').first();
     $.getJSON(twitter_url, function(tweets) {
       var t, tweet, _i, _len, _results;
-      window.console.log(tweets);
       _results = [];
       for (_i = 0, _len = tweets.length; _i < _len; _i++) {
         tweet = tweets[_i];
