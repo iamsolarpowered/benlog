@@ -1,6 +1,11 @@
 (function() {
   jQuery(function() {
-    var Tweet, tweet_template, tweets_el, twitter_url;
+    var Tweet, about, offset, tweet_template, tweets_el, twitter_url;
+    about = $('.about').first();
+    offset = about.offset();
+    about.css('position', 'fixed');
+    about.css('top', offset.top);
+    about.css('left', offset.left);
     twitter_url = 'https://api.twitter.com/1/statuses/user_timeline.json?count=100&trim_user=true&include_rts=true&screen_name=iamsolarpowered&callback=?';
     tweets_el = $('.tweets');
     tweet_template = $('#templates .tweet').first();

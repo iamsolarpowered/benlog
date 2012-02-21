@@ -1,4 +1,13 @@
 jQuery ->
+
+  #FIXME: move to function, fire on window resize
+  about = $('.about').first()
+  offset = about.offset()
+  about.css      'position',   'fixed'
+  about.css      'top',         offset.top
+  about.css      'left',        offset.left
+
+
   twitter_url = 'https://api.twitter.com/1/statuses/user_timeline.json?count=100&trim_user=true&include_rts=true&screen_name=iamsolarpowered&callback=?'
 
   tweets_el = $('.tweets')
@@ -9,6 +18,7 @@ jQuery ->
     for tweet in tweets
       t = new Tweet tweet
       t.display()
+
 
   class Tweet
     constructor: (@tweet) ->
@@ -32,6 +42,7 @@ jQuery ->
       _el
 
     display: -> tweets_el.append(this.html())
+
 
 String::autolink = () ->
   this.replace /(https?:\/\/.*?)\W*(\s|$)/gi, "<a href='$1' target='_blank'>$1</a> "

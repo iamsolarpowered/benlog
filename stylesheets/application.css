@@ -1,33 +1,10 @@
-header {
-  z-index: -1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-header .container {
-  width: 940px;
-  margin: 0 auto;
-}
-
 .container {
   padding: 78px 0;
 }
 
-.about {
-  text-align: right;
-}
-.about h1 {
-  font-size: 39px;
-  margin-bottom: 13px;
-}
 .about .avatar {
   display: inline-block;
-  vertical-align: text-top;
-}
-
-#main {
-  padding-top: 49px;
+  margin-bottom: 1em;
 }
 
 .tweet {
@@ -40,7 +17,7 @@ header .container {
   margin-top: 1em;
   text-align: right;
 }
-.tweet .info > div {
+.tweet .info > * {
   display: inline-block;
   margin-left: 2em;
 }

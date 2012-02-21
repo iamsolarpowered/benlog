@@ -9,22 +9,28 @@
     <script src="/javascripts/application.js" type="text/javascript"></script>
   </head>
   <body>
-    <header>
-      <div class='container'>
-        <div class='row'>
-          <div class='about span4'>
-            <h1>Ben Shymkiw</h1>
-            <div class='avatar thumbnail'>
-              <img src='http://www.gravatar.com/avatar/6d51e89b2c630d7e3db9b5fd499661cf?s=156' />
-              <h5>Rubyist, concerned citizen</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
     <div class='container'>
-      <div class='row' id='main'>
-        <section class='tweets span7 offset5'></section>
+      <div class='row'>
+        <div class='about span4'>
+          <h1>Ben Shymkiw</h1>
+          <p>
+            <em>Rubyist, concerned citizen</em>
+          </p>
+          <div class='avatar thumbnail'>
+            <img src='http://www.gravatar.com/avatar/6d51e89b2c630d7e3db9b5fd499661cf?s=156' />
+          </div>
+          <ul class='links'>
+            <li><a href="http://github.com/iamsolarpowered">Github</a></li>
+            <li><a href="http://www.linkedin.com/profile/view?id=37114483">LinkedIn</a></li>
+            <li><a href="http://twitter.com/iamsolarpowered">Twitter</a></li>
+          </ul>
+          <ul class='source'>
+            <li><a href="https://github.com/iamsolarpowered/benlog/tree/gh-pages">Dig the code</a></li>
+          </ul>
+        </div>
+        <div class='span8 offset4' id='main'>
+          <section class='tweets'></section>
+        </div>
       </div>
     </div>
     <div id='templates' style='display: none;'>
