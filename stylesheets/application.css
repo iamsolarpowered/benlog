@@ -1,23 +1,29 @@
 .container {
-  padding: 78px 0;
-}
+  padding: 78px 0; }
 
 .about .avatar {
   display: inline-block;
-  margin-bottom: 1em;
-}
+  margin-bottom: 1em; }
+
+.news {
+  padding-top: 4em; }
+
+.news .headline {
+  padding-bottom: 1em; }
+
+.news blockquote small {
+  text-align: right; }
 
 .tweet {
-  margin-bottom: 2em;
-}
+  margin-bottom: 2em; }
+
 .tweet .text {
-  font-size: 118%;
-}
+  font-size: 118%; }
+
 .tweet .info {
   margin-top: 1em;
-  text-align: right;
-}
+  text-align: right; }
+
 .tweet .info > * {
   display: inline-block;
-  margin-left: 2em;
-}
+  margin-left: 2em; }

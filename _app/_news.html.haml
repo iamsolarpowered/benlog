@@ -1,0 +1,8 @@
+.news{'ng-controller' => 'GoogleReaderController'}
+  %h3.headline Interesting Things
+  %blockquote.item{'ng-repeat' => 'item in items'}
+    %a{'ng-href' => "{{item.alternate.href}}"}
+      {{item.title}}
+    %small
+      %a{'ng-href' => "{{item.origin.htmlUrl}}"}
+        {{item.origin.title}}

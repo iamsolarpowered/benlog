@@ -1,41 +1,22 @@
 !!! 5
-%html
+%html{'ng-app' => 'Benlog'}
 
   %head
     %title Ben Shymkiw - iamsolarpowered
     %link{rel: "shortcut icon", href: "/favicon.ico"}
     = stylesheet_link_tag 'http://t.apio.ca/bootstrap/css/bootstrap.min.css'
     = stylesheet_link_tag 'application'
-    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
-    = javascript_include_tag 'jquery.timeago'
+    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js'
+    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
     = javascript_include_tag 'application'
 
   %body
     .container
       .row
-        .about.span4
-          %h1 Ben Shymkiw
-          %p 
-            %em Rubyist, concerned citizen
-          .avatar.thumbnail
-            %img{src: "http://www.gravatar.com/avatar/6d51e89b2c630d7e3db9b5fd499661cf?s=156"}
-          = twitter_link
-          %ul.links
-            %li= link_to 'Github', 'http://github.com/iamsolarpowered'
-            %li= link_to 'LinkedIn', 'http://www.linkedin.com/profile/view?id=37114483'
-            %li= link_to 'Resume', 'http://careers.stackoverflow.com/iamsolarpowered'
-          %ul.source
-            %li= link_to 'Dig the code', 'https://github.com/iamsolarpowered/benlog/tree/gh-pages', title: 'Now with 99% less Ruby!'
-        #main.span8.offset4
-          %section.tweets
 
-    #templates{style: 'display: none;'}
-      .tweet.well
-        .text
-        .info.small
-          %time.date
-          .retweets
-            %span.count
-            retweets
-          .permalink
-            %a{href: '#', target: '_blank'} [ permalink ]
+        #sidebar.span4
+          = render 'about'
+          = render 'news'
+
+        #main.offset1.span7
+          = render 'tweets'

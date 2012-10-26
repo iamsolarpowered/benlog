@@ -9,6 +9,20 @@
   }
 }
 
+.news {
+  .headline {
+    padding-bottom: 1em;
+  }
+  padding: {
+    top: 4em;
+  }
+  blockquote {
+    small {
+      text-align: right;
+    }
+  }
+}
+
 .tweet {
   margin-bottom: 2em;
   .text {
