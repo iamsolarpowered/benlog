@@ -18,7 +18,7 @@ window.GoogleReaderController = ($scope) ->
       $scope.$apply -> 
         $scope.items = response.items
 
-  $scope.fetch 'http://www.google.com/reader/export/json/user/07268286758726657191/state/com.google/starred?filename=starred-items.json&co=true&at=exKGT3qT-_2cTFjprocdCQ&hl=en&callback=?'
+  $scope.fetch 'http://www.google.com/reader/public/javascript/user/07268286758726657191/state/com.google/starred?callback=?'
 
 jQuery ->
   $('a').live 'click', ->
