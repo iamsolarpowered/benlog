@@ -1,4 +1,4 @@
-%section.tweets{'ng-controller' => 'TweetsController'}
+%section.tweets.pull-right{'ng-controller' => 'TweetsController'}
   %blockquote.twitter-tweet{'ng-repeat' => 'item in items'}
     %p {{item.text}}
     %a{:href => 'https://twitter.com/twitterapi/status/{{item.id_str}}', 'data-datetime' => '{{item.created_at.toISOString()}}'} {{item.created_at}}

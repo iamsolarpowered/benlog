@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class='offset1 span7' id='main'>
-          <section class='tweets' ng-controller='TweetsController'>
+          <section class='tweets pull-right' ng-controller='TweetsController'>
             <blockquote class='twitter-tweet' ng-repeat='item in items'>
               <p>{{item.text}}</p>
               <a data-datetime='{{item.created_at.toISOString()}}' href='https://twitter.com/twitterapi/status/{{item.id_str}}'>{{item.created_at}}</a>
