@@ -20,7 +20,7 @@ body {
   padding: {
     top: 4em;
   }
-  blockquote {
+  .item {
     &:before {
       content: none;
     }

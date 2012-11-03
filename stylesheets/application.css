@@ -14,7 +14,10 @@ body {
 .news .headline {
   padding-bottom: 1em; }
 
-.news blockquote small {
+.news .item:before {
+  content: none; }
+
+.news .item small {
   text-align: right; }
 
 .tweet {
