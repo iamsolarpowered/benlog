@@ -21,6 +21,9 @@ body {
     top: 4em;
   }
   blockquote {
+    &:before {
+      content: none;
+    }
     small {
       text-align: right;
     }
