@@ -6,7 +6,9 @@ body {
 
 .about .avatar {
   display: inline-block;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  width: 156px;
+  height: 156px; }
 
 .news {
   padding-top: 4em; }
